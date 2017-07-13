@@ -18,3 +18,28 @@ section .time {
     text-align: center;
     font-size: 10vw;
 }
+
+#controls {
+    margin-bottom: 100px;
+}
+
+.control {
+    background-color: #d7A04e;
+    border-radius: 50%;
+    height: 10vw;
+    width: 10vw;
+    text-align: center;
+    font-size: 2.5vw;
+    padding: 20% 0;
+    cursor: pointer;
+}
+
+.control:active {
+    background-color: #fff;
+    color: #d7A04e;
+}
+
+.laps {
+    max-height: 270px;
+    overflow: scroll;
+}
