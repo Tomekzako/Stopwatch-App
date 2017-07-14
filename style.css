@@ -1,7 +1,8 @@
 body {
-    background: url(images/time.jpg) center center fixed;
+    background: url(images/time.jpeg) center center fixed;
     background-size: cover;
     color: #fff;
+    font-family: 'Exo 2', sans-serif;
 }
 
 header h1 {
@@ -20,7 +21,7 @@ section .time {
 }
 
 #controls {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .control {
@@ -42,4 +43,20 @@ section .time {
 .laps {
     max-height: 270px;
     overflow-y: scroll;
+}
+
+.newLap {
+    height: 50px;
+    border-bottom: 1px solid #fff;
+    margin: 15px;
+}
+
+.laptitle {
+    font-size: 1.5em;
+    float: left;
+}
+
+.laptime {
+    font-size: 2em;
+    float: right;
 }

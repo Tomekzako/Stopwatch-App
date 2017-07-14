@@ -88,8 +88,8 @@ $(function () {
 
     function addLap() {
         lapNumber++;
-        let newLap = '<div>' + '<div>' + 'Lap' + lapNumber + '</div>' + '<div>' + '</div>' + '</div>';
-        $(newLap).appendTo(".laps");
+        let newLap = '<div class = "newLap">' + '<div class="laptitle">' + 'Lap' + lapNumber + '</div>' + '<div class = "laptime" >' + '<span>' + formatNumbers(lapMinutes) + ':</span>' + '<span>' + formatNumbers(lapSeconds) + ':</span>' + '<span>' + formatNumbers(lapCentiseconds) + '</span>' + '</div>' + '</div>';
+        $(newLap).prependTo(".laps");
     }
 
 
