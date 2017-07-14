@@ -34,13 +34,25 @@ $(function () {
         timeSeconds = Math.floor((timeCounter % 6000) / 100);
         timeCentiseconds = Math.floor((timeCounter % 6000) % 100);
 
-        $('#timeminute').text(timeMinutes);
-        $('#timesecond').text(timeSeconds);
-        $('#timecentisecond').text(timeCentiseconds);
+        lapMinutes = Math.floor(lapCounter / 6000);
+        lapSeconds = Math.floor((lapCounter % 6000) / 100);
+        lapCentiseconds = Math.floor((lapCounter % 6000) % 100);
 
-        $('#lapeminute').text(timeMinutes);
-        $('#lapsecond').text(timeSeconds);
-        $('#lapcentisecond').text(timeCentiseconds);
+        $('#timeminute').text(formatNumbers(timeMinutes));
+        $('#timesecond').text(formatNumbers(timeSeconds));
+        $('#timecentisecond').text(formatNumbers(timeCentiseconds));
+
+        $('#lapeminute').text(formatNumbers(lapMinutes));
+        $('#lapsecond').text(formatNumbers(lapSeconds));
+        $('#lapcentisecond').text(formatNumbers(lapCentiseconds));
+    }
+
+    function formatNumbers(n) {
+        if (n < 10) {
+            return "0" + n;
+        } else {
+            return n;
+        }
     }
 
 
