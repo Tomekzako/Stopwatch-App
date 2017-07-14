@@ -12,6 +12,19 @@ $(function () {
         startAction();
     });
 
+    $(".stopbtn").on('click', function () {
+        showHideBtns(".resumebtn", ".resetbtn");
+        clearInterval(action);
+    });
+
+    $(".resumebtn").on('click', function () {
+        showHideBtns(".stopbtn", ".resetbtn");
+        startAction();
+    });
+    
+        $(".resetbtn").on('click', function () {
+        location.reload();
+    });
 
     // Functions 
 
@@ -24,7 +37,13 @@ $(function () {
     function startAction() {
         action = setInterval(function () {
             timeCounter++;
+            if (timeCounter == 100 * 60 * 100) {
+                timeCounter = 0;
+            }
             lapCounter++;
+            if (lapCounter == 100 * 60 * 100) {
+                lapCounter = 0;
+            }
             updateTime();
         }, 10);
     }
