@@ -13,6 +13,7 @@ header h1 {
 section .lap {
     text-align: right;
     font-size: 4vw;
+    margin-right: 10px;
 }
 
 section .time {
@@ -40,6 +41,16 @@ section .time {
     color: #d7A04e;
 }
 
+#lapcentisecond {
+    width: 20px;
+    display: inline-block;
+}
+
+#timecentisecond {
+    width: 40px;
+    display: inline-block;
+}
+
 .laps {
     max-height: 270px;
     overflow-y: scroll;
@@ -59,4 +70,14 @@ section .time {
 .laptime {
     font-size: 2em;
     float: right;
+}
+
+@media(min-width: 768px) {
+    #lapcentisecond {
+        width: 50px;
+        margin-right: 10px;
+    }
+    #timecentisecond {
+        width: 100px;
+    }
 }
