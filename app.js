@@ -1,13 +1,15 @@
 $(function () {
-
+    let gameMode = false;
     let action;
     let timeCounter = 0;
+    let lapNumber = 0;
     let lapCounter = 0;
     let timeMinutes, timeSeconds, timeCentiseconds, lapMinutes, lapSeconds, lapCentiseconds;
 
     showHideBtns(".startbtn", ".lapbtn");
 
     $(".startbtn").on('click', function () {
+        gameMode = true;
         showHideBtns(".stopbtn", ".lapbtn");
         startAction();
     });
@@ -18,12 +20,22 @@ $(function () {
     });
 
     $(".resumebtn").on('click', function () {
-        showHideBtns(".stopbtn", ".resetbtn");
+        showHideBtns(".stopbtn", ".lapbtn");
         startAction();
     });
-    
-        $(".resetbtn").on('click', function () {
+
+    $(".resetbtn").on('click', function () {
         location.reload();
+    });
+
+    $(".lapbtn").on('click', function () {
+        if (gameMode == true) {
+            clearInterval(action);
+            lapCounter = 0;
+            addLap();
+            startAction();
+
+        }
     });
 
     // Functions 
@@ -72,6 +84,12 @@ $(function () {
         } else {
             return n;
         }
+    }
+
+    function addLap() {
+        lapNumber++;
+        let newLap = '<div>' + '<div>' + 'Lap' + lapNumber + '</div>' + '<div>' + '</div>' + '</div>';
+        $(newLap).appendTo(".laps");
     }
 
 
