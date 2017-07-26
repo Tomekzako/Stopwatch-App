@@ -1,5 +1,6 @@
 body {
-    background: url(images/time.jpeg) center center fixed;
+    background: url(images/time.jpeg);
+    height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     color: #fff;
